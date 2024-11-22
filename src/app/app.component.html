@@ -1,7 +1,10 @@
-<div>
-    <p>{{ a }} {{ znak }} {{ b }} = {{ result }}</p>
-
-    <div class="button-container">
-        <button *ngFor="let button of buttons" (click)="click(button)">{{ button }}</button>
+<div class="calculator">
+    <div class="display">
+      <h1>{{ title }}</h1>
+      <div class="result">{{ result !== null ? result : a }}</div> <!-- Отображаем результат или текущее число -->
+      <div class="input">{{ znak }} {{ b }}</div> <!-- Отображаем знак операции и второе число -->
     </div>
-</div>
+    <div class="buttons">
+      <button *ngFor="let button of buttons" (click)="click(button)">{{ button }}</button>
+    </div>
+  </div>

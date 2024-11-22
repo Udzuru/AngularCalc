@@ -1,12 +1,59 @@
-button{
-    margin: 10px;
-    padding: 20px;
-    font-size: large;
-    background-color: white;
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-}
-p{
-    font-size: 40px;
-}
+/* Общие стили для калькулятора */
+.calculator {
+    max-width: 400px; /* Максимальная ширина */
+    margin: 50px auto; /* Центрирование */
+    padding: 20px; /* Отступы */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 10px; /* Закругление углов */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: #f9f9f9; /* Цвет фона */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+  }
+  
+  /* Стили для дисплея */
+  .display {
+    margin-bottom: 20px; /* Отступ снизу */
+    padding: 10px; /* Отступы */
+    background-color: #222; /* Цвет фона дисплея */
+    color: #fff; /* Цвет текста */
+    border-radius: 5px; /* Закругление углов */
+    text-align: right; /* Выравнивание текста */
+    font-size: 24px; /* Размер шрифта */
+  }
+  
+  /* Стили для кнопок */
+  .buttons {
+    display: grid; /* Используем grid для кнопок */
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 10px; /* Отступ между кнопками */
+  }
+  
+  button {
+    height: 60px; /* Высота кнопок */
+    font-size: 20px; /* Размер шрифта */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругление углов */
+    background-color: #007bff; /* Цвет фона кнопок */
+    color: #fff; /* Цвет текста */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s, transform 0.1s; /* Плавный переход */
+  }
+  
+  /* Эффект при наведении на кнопки */
+  button:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+  }
+  
+  /* Эффект при нажатии на кнопки */
+  button:active {
+    transform: scale(0.95); /* Уменьшаем кнопку при нажатии */
+  }
+  
+  /* Стили для кнопки сброса */
+  button:last-child {
+    background-color: #dc3545; /* Красный цвет для кнопки сброса */
+  }
+  
+  button:last-child:hover {
+    background-color: #c82333; /* Темно-красный цвет при наведении */
+  }
