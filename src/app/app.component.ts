@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -82,5 +82,23 @@ export class AppComponent {
     this.b = 0;
     this.znak = '';
     this.result = null; // Сбрасываем результат
+  }
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    const key = event.key;
+
+    if (!isNaN(Number(key))) {
+      // Если нажата клавиша с числом
+      this.click(Number(key));
+    } else if (['+', '-', '*', '/'].includes(key)) {
+      // Если нажата клавиша с операцией
+      this.click(key);
+    } else if (key === 'Enter' || key === '=') {
+      // Если нажата клавиша "Enter" или "="
+      this.click('=');
+    } else if (key === 'Escape' || key === 'c') {
+      // Если нажата клавиша "Escape" или "C"
+      this.click('C');
+    }
   }
 }
